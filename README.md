@@ -5,7 +5,8 @@
 2- Open terminal and cd to the folder of the files
 
 3- Then on the terminal:
-  $ python -m venv venv
-  $ venv\Scripts\activate
-  $ pip install requirements.txt
-  $ python shopeeDiscount.py
+  
+$ python -m venv venv
+$ venv\Scripts\activate
+$ pip install requirements.txt
+$ python shopeeDiscount.py
