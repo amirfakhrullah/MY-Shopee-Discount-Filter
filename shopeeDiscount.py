@@ -11,6 +11,7 @@ from highestDiscount import highest_discount
 
 
 search = str(input("What are you searching for?\n:"))
+print('searching ...')
 searchurl = search.replace(' ', '%20')
 url = 'https://shopee.com.my/search?keyword={}&page=0'.format(searchurl)
 
@@ -40,7 +41,7 @@ while page != 5:
     products = soup.find_all('div', {'class':'col-xs-2-4 shopee-search-item-result__item'})
 
 
-    print(len(products))
+    print(str(len(products)) + ' products on this page ...')
     prod_list = []
     for product in products:
         discount = ''
@@ -82,6 +83,7 @@ while page != 5:
             except:
                 Exception()
     page += 1
+    print('page ' + page)
     if page != 5:
         try:
             driver.get(driver.current_url[:-1] +  str(page))
@@ -89,7 +91,8 @@ while page != 5:
             break
 
 #pprint.pprint(prod_list)
-print(len(prod_list))
+print(str(len(prod_list)) + ' products found with discounts')
+print('The best offer is ...')
 
 buy_now = highest_discount(prod_list)
 pprint.pprint(buy_now)
