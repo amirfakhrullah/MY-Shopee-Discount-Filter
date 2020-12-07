@@ -1,4 +1,4 @@
-"# 12.12-Shopee-Discount-Filter" 
+"# MY-Shopee-Discount-Filter" 
 
 1- Don't forget to download chromedriver if you haven't already (and edit the PATH of the chromedriver in shopeeDiscount.py file)
 
