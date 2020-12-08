@@ -18,3 +18,5 @@ $ python shopeeDiscount.py
 Changeable option:
 
 The number of pages to search is set to 5. To change it, change the page value in line 27 and 87 of shopeeDiscount.py to your desired number of pages
+
+If your chrome runs slow and can't fully detect the full discounted products, remove the # on line 29, 30, 35 and 36 in shopeeDiscount.py to slower the search speed (to be detailed in searching)
