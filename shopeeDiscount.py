@@ -26,14 +26,14 @@ except:
 page = 0
 while page != 5:
     driver.implicitly_wait(3)
-    driver.execute_script("window.scrollTo(0,(document.body.scrollHeight)/4)")
-    time.sleep(3)
+    #driver.execute_script("window.scrollTo(0,(document.body.scrollHeight)/4)")
+    #time.sleep(3)
     driver.execute_script("window.scrollTo(0,(document.body.scrollHeight)/2)")
     time.sleep(3)
     driver.execute_script("window.scrollTo(0,3*(document.body.scrollHeight)/4)")
     time.sleep(3)
-    driver.execute_script("window.scrollTo(0,document.body.scrollHeight)")
-    time.sleep(3)
+    #driver.execute_script("window.scrollTo(0,document.body.scrollHeight)")
+    #time.sleep(3)
 
     try:
         WebDriverWait(driver, 10).until(EC.visibility_of_all_elements_located((By.CSS_SELECTOR,'#main > div > div._1Bj1VS > div.container._2_Y1cV > div.jrLh5s > div.shopee-search-item-result > div.row.shopee-search-item-result__items')))
