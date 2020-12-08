@@ -17,4 +17,4 @@ $ python shopeeDiscount.py
 
 Changeable option:
 
-The number of pages to search is set to 5. To change it, change the value of line 27 and 87 of shopeeDiscount.py to your desired number of pages
+The number of pages to search is set to 5. To change it, change the page value in line 27 and 87 of shopeeDiscount.py to your desired number of pages
