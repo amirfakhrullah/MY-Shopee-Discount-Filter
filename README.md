@@ -10,3 +10,7 @@ $ python -m venv venv
 $ venv\Scripts\activate
 $ pip install requirements.txt
 $ python shopeeDiscount.py
+
+
+Changeable option:
+-The number of pages to search is set to 5. To change it, change the number of line 27 and 87
