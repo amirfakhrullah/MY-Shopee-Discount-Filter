@@ -35,13 +35,16 @@ while page != 5:
     driver.execute_script("window.scrollTo(0,document.body.scrollHeight)")
     time.sleep(3)
 
-    WebDriverWait(driver, 10).until(EC.visibility_of_all_elements_located((By.CSS_SELECTOR,'#main > div > div._1Bj1VS > div.container._2_Y1cV > div.jrLh5s > div.shopee-search-item-result > div.row.shopee-search-item-result__items')))
+    try:
+        WebDriverWait(driver, 10).until(EC.visibility_of_all_elements_located((By.CSS_SELECTOR,'#main > div > div._1Bj1VS > div.container._2_Y1cV > div.jrLh5s > div.shopee-search-item-result > div.row.shopee-search-item-result__items')))
+    except:
+        break
     html = driver.page_source
     soup = BeautifulSoup(html, 'html.parser')
     products = soup.find_all('div', {'class':'col-xs-2-4 shopee-search-item-result__item'})
 
 
-    print(str(len(products)) + ' products on this page ...')
+    print(str(len(products)) + ' products on this page...')
     prod_list = []
     for product in products:
         discount = ''
@@ -49,7 +52,7 @@ while page != 5:
             discount = product.find('span', {'class':'percent'}).text
             prod = product_with_discount(discount)
         except:
-            discount = ''
+            Exception()
     
         if len(discount) > 0:
             try:
@@ -83,7 +86,7 @@ while page != 5:
             except:
                 Exception()
     page += 1
-    print('page ' + page)
+    print('page ' + str(page))
     if page != 5:
         try:
             driver.get(driver.current_url[:-1] +  str(page))
@@ -92,8 +95,11 @@ while page != 5:
 
 #pprint.pprint(prod_list)
 print(str(len(prod_list)) + ' products found with discounts')
-print('The best offer is ...')
+print('The best offer is...')
 
 buy_now = highest_discount(prod_list)
 pprint.pprint(buy_now)
-driver.get('https://shopee.com.my/' + buy_now['Link'])
+try:
+    driver.get('https://shopee.com.my/' + buy_now['Link'])
+except:
+    Exception()
