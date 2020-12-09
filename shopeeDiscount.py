@@ -13,6 +13,7 @@ from highestDiscount import highest_discount
 search = str(input("What are you searching for?\n:"))
 print('searching ...')
 searchurl = search.replace(' ', '%20')
+searchsplit = search.split()
 url = 'https://shopee.com.my/search?keyword={}&page=0'.format(searchurl)
 
 driver = webdriver.Chrome()
@@ -67,7 +68,7 @@ while page != 5:
                 Exception()
         
             right_item = True
-            for word in search:
+            for word in searchsplit:
                 if word.lower() not in prod['Name'].lower():
                     right_item = False
             if right_item == False: break
