@@ -6,6 +6,7 @@ Find the best offer of your desired product on Shopee website (Malaysia only).
 
 ## Technologies
 
+* webscraping
 * Python
 * Selenium
 * BeautifulSoup4
