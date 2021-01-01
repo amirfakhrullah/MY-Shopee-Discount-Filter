@@ -23,10 +23,10 @@ Find the best offer of your desired product on Shopee website (Malaysia only).
 3- Then on the terminal:
 
 ```
-$ python -m venv venv
-$ venv\Scripts\activate
-$ pip install requirements.txt
-$ python shopeeDiscount.py
+python -m venv venv
+venv\Scripts\activate
+pip install requirements.txt
+python shopeeDiscount.py
 ```
 
 ## Changeable option
